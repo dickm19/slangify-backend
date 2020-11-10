@@ -4,7 +4,7 @@ class CreateDefinitions < ActiveRecord::Migration[6.0]
       t.integer :word_id
       t.string :content
       t.integer :likes
-      t.string :example
+  
 
       t.timestamps
     end

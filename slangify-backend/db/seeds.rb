@@ -14,6 +14,7 @@ require 'cgi'
  
 Definition.destroy_all
 Word.destroy_all
+Example.destroy_all
  
 terms = ["Brick", "Rat-licker", "Simp", "Smize", "Himbo", "Steezy", "Doomscrolling", "Hits Different"]
 count = 0
@@ -43,9 +44,12 @@ end
 words.each do |word|
    word_choice = Word.create!(term: word["list"][0]["word"])
    word["list"].each do |w|
-       definition = Definition.new(content: w["definition"], word_id: word_choice.id, likes: 0, example: w["example"])
+       definition = Definition.new(content: w["definition"], word_id: word_choice.id, likes: 0)
        definition.clear_chars
        definition.save!
+       example = Example.new(content: w["example"], word_id: word_choice.id)
+       example.clear_chars
+       example.save!
    end
  
 end

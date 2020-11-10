@@ -1,3 +1,3 @@
 class WordSerializer < ActiveModel::Serializer
-  attributes :id, :term, :definitions
+  attributes :id, :term, :definitions, :examples
 end

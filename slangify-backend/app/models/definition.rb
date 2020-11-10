@@ -4,9 +4,6 @@ class Definition < ApplicationRecord
     def clear_chars
         self.content.tr!('[]', '')
         self.content.tr!('\'', '')
-   
-        ##puts self.content
-        self.example.tr!('[]', '')
-        self.example.tr!('\'', '')
-    end
+    end 
+    
 end
