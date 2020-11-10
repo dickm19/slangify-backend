@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :words, only: [:show, :index, :destroy, :new, :edit]
-      resources :definitions, only: [:show, :index, :destroy, :new, :edit]
-      resources :examples, only: [:show, :index, :destroy, :new, :edit]
+      resources :words
+      resources :definitions
+      resources :examples
     end
   end
 end

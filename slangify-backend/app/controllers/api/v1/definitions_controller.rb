@@ -1,6 +1,6 @@
 class Api::V1::DefinitionsController < ApplicationController
     def show
-        definition = Definition.find!(params[:id])
+        definition = Definition.find(params[:id])
         render json: definition
     end
     
@@ -15,8 +15,8 @@ class Api::V1::DefinitionsController < ApplicationController
     end
 
     def update
-        definition = Definition.find!(params[:id])
-        Definition.update!(definition_params)
+        definition = Definition.find(params[:id])
+        Definition.update(definition_params)
         render json: definition
     end
 
@@ -24,6 +24,6 @@ class Api::V1::DefinitionsController < ApplicationController
     private
 
     def definition_params
-        params.require(:definition).permit(:word_id, :content, :example, :likes)
+        params.require(:definition).permit(:word_id, :content, :likes)
     end
 end
