@@ -1,3 +1,3 @@
 class ExampleSerializer < ActiveModel::Serializer
-  attributes :id, :content, :word_id 
+  attributes :id, :word_id 
 end

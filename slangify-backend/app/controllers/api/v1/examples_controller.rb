@@ -1,4 +1,4 @@
-class Api::V1::WordsController < ApplicationController
+class Api::V1::ExamplesController < ApplicationController
 
     def show
         example = Example.find!(params[:id])
@@ -18,6 +18,12 @@ class Api::V1::WordsController < ApplicationController
     def update
         example = Example.find!(params[:id])
         example.update!(example_params)
+        render json: example
+    end
+
+     def destroy
+        example = Example.find(params[:id])
+        example.destroy
         render json: example
     end
 

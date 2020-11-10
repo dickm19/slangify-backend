@@ -44,10 +44,10 @@ end
 words.each do |word|
    word_choice = Word.create!(term: word["list"][0]["word"])
    word["list"].each do |w|
-       definition = Definition.new(content: w["definition"], word_id: word_choice.id, likes: 0)
+       definition = Definition.create!(content: w["definition"], word_id: word_choice.id, likes: 0)
        definition.clear_chars
        definition.save!
-       example = Example.new(content: w["example"], word_id: word_choice.id)
+       example = Example.create!(content: w["example"], word_id: word_choice.id)
        example.clear_chars
        example.save!
    end

@@ -16,10 +16,15 @@ class Api::V1::DefinitionsController < ApplicationController
 
     def update
         definition = Definition.find(params[:id])
-        Definition.update(definition_params)
+        definition.update(definition_params)
         render json: definition
     end
 
+    def destroy
+        definition = Definition.find(params[:id])
+        definition.destroy
+        render json: definition
+    end
 
     private
 

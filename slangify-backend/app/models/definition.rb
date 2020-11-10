@@ -1,5 +1,5 @@
 class Definition < ApplicationRecord
-    belongs_to :word, dependent: :destroy
+    belongs_to :word
  
     def clear_chars
         self.content.tr!('[]', '')

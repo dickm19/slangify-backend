@@ -21,6 +21,7 @@ class Api::V1::WordsController < ApplicationController
         render json: word
     end
 
+   
 
     private
 
