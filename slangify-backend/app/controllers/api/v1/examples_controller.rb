@@ -16,7 +16,7 @@ class Api::V1::ExamplesController < ApplicationController
     end
 
     def update
-        example = Example.find!(params[:id])
+        example = Example.find(params[:id])
         example.update!(example_params)
         render json: example
     end
