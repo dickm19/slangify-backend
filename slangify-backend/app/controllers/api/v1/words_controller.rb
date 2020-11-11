@@ -1,4 +1,6 @@
 class Api::V1::WordsController < ApplicationController
+ 
+# testing to see if this is the updated version
 
     def show
         word = Word.find!(params[:id])
