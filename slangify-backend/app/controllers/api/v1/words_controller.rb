@@ -3,7 +3,7 @@ class Api::V1::WordsController < ApplicationController
 # testing to see if this is the updated version
 
     def show
-        word = Word.find!(params[:id])
+        word = Word.find(params[:id])
         render json: word
     end
     
@@ -13,13 +13,19 @@ class Api::V1::WordsController < ApplicationController
     end
 
     def create
-        word = word.create!(word_params)
+        word = Word.create!(word_params)
         render json: word
     end
 
     def update
-        word = Word.find!(params[:id])
-        word.update!(word_params)
+        word = Word.find(params[:id])
+        word.update(word_params)
+        render json: word
+    end
+
+    def destroy
+        word = Word.find(params[:id])
+        word.destroy
         render json: word
     end
 

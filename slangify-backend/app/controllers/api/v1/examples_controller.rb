@@ -1,7 +1,7 @@
 class Api::V1::ExamplesController < ApplicationController
 
     def show
-        example = Example.find!(params[:id])
+        example = Example.find(params[:id])
         render json: example
     end
     
@@ -11,7 +11,7 @@ class Api::V1::ExamplesController < ApplicationController
     end
 
     def create
-        example = example.create!(example_params)
+        example = Example.create!(example_params)
         render json: example
     end
 
