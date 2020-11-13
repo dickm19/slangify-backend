@@ -16,7 +16,7 @@ Definition.destroy_all
 Word.destroy_all
 Example.destroy_all
  
-terms = ["Brick", "Rat-licker", "Simp", "Smize", "Himbo", "Steezy", "Doomscrolling", "Hits Different"]
+terms = ["Brick", "Rat-licker", "Simp", "Smize", "Himbo", "Steezy", "Doomscrolling", "Hits Different", "Wilding","Dead Serious", "cap", "Bruh", "yer"]
 count = 0
 words = []
 while count < terms.length do
